@@ -1,0 +1,266 @@
+/* style.css (Unggulan.css) */
+
+/* ======================== */
+/*      STYLE DASAR         */
+/* ======================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* style.css */
+
+/* ... (Kode CSS lainnya di atas) ... */
+
+/* ======================== */
+/*         HEADER           */
+/* ======================== */
+header {
+    /* MENGGANTI GRADIENT DENGAN GAMBAR */
+    background-image: url('images/backgroundnavbar.jpg'); /* <-- Path file gambar Anda */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Overlay untuk menjaga keterbacaan teks dan tema warna */
+    background-blend-mode: multiply; 
+    
+
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul dan Navigasi agar tetap terbaca */
+header h1 {
+    transition: 0.3s;
+    animation: pulse 1s ease-in-out 0.8s 1;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); /* Tambahkan bayangan untuk kontras */
+}
+
+/* ... (Kode CSS lainnya di bawah) ... */
+/* ======================== */
+/*         CONTAINER        */
+/* ======================== */
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 80vh;
+}
+
+/* ======================== */
+/*     --- Sidebar Styling --- */
+/* ======================== */
+#sidebar {
+    width: 300px;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    background-color: #f8f8f8;
+    flex-shrink: 0; /* Mencegah sidebar mengecil */
+}
+
+#sidebar h3 {
+    border-bottom: 2px solid #a0522d;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    color: #a0522d;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #ffeadb; /* Krem Muda */
+    border-left: 5px solid #a0522d;
+}
+
+.menu-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.menu-info h4 {
+    margin: 0;
+    font-size: 1em;
+    color: #555;
+}
+
+.rating-display {
+    font-size: 0.8em;
+    color: #777;
+    display: flex;
+    align-items: center;
+}
+
+.rating-value {
+    font-weight: bold;
+    color: #a0522d;
+    margin-right: 5px;
+}
+
+/* Styling Bintang Statis di Sidebar */
+.stars-static .star {
+    color: gold;
+    font-size: 1.1em;
+}
+
+/* ======================== */
+/*     --- Main Content Styling --- */
+/* ======================== */
+#mainContent {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.detail-resep h2 {
+    color: #a0522d;
+    margin-top: 0;
+}
+
+.detail-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detail-resep h3 {
+    margin-top: 25px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.detail-resep pre {
+    white-space: pre-wrap;
+    background-color: #fafafa;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+/* ======================== */
+/*     --- Rating Interactive Styling --- */
+/* ======================== */
+.rating-section {
+    padding: 15px;
+    border: 1px solid #ffd700;
+    background-color: #fffbf5;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.rating-interactive .star {
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star.full-star {
+    color: gold;
+}
+
+.star.empty-star {
+    color: #ccc;
+}
+
+.star.full-star-hover {
+    color: orange; /* Warna saat hover */
+}
+
+.star.half-star {
+    color: gold; 
+}
+
+/* ======================== */
+/*     --- FOOTER ---         */
+/* ======================== */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ff6a00;
+    color: white;
+    margin-top: 20px;
+}
+
+/* ======================== */
+/*     --- TOMBOL KEMBALI ---  */
+/* ======================== */
+.btn-back {
+    position: absolute; /* Posisikan relatif terhadap header */
+    top: 20px;
+    left: 20px;
+    
+    /* Styling Tombol */
+    background-color: #f7f7f7; /* Warna latar belakang cerah */
+    color: #d35400; /* Warna teks sesuai tema */
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back:hover {
+    background-color: #d35400; /* Balikkan warna saat hover */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================== */
+/*     --- MEDIA QUERIES --- */
+/* ======================== */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Ubah layout menjadi vertikal */
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    #mainContent {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Tombol Kembali untuk Ponsel */
+    .btn-back {
+        position: static;
+        display: block;
+        margin: 0 auto 10px;
+        width: fit-content;
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+    
+    header {
+        padding-top: 10px; /* Sesuaikan padding header jika tombol dipindahkan */
+    }
+}

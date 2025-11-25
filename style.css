@@ -1,0 +1,523 @@
+/* ======================== */
+/*      STYLE DASAR         */
+/* ======================== */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0;
+    background-color: #fffaf2;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* ======================== */
+/*         HEADER           */
+/* ======================== */
+header {
+    /* --- PERUBAHAN DI SINI: MENGGANTI GRADIENT DENGAN GAMBAR --- */
+    background-image: url('images/backgroundnavbar.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    
+    /* Overlay untuk menjaga warna tema dan keterbacaan teks */
+    background-blend-mode: multiply; 
+    
+
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Judul Hover */
+header h1 {
+    transition: 0.3s;
+    /* Tambahkan bayangan teks untuk kontras di atas gambar */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+    /* --- Animasi Masuk (Pulse) --- */
+    animation: pulse 1s ease-in-out 0.8s 1;
+}
+
+header h1:hover {
+    letter-spacing: 2px;
+    transform: scale(1.05);
+}
+
+
+/* NAV */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.7); /* Tambah bayangan teks navigasi */
+}
+
+nav a:hover {
+    color: #ffe4c4;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+
+/* ======================== */
+/*         SECTION          */
+/* ======================== */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    /* --- Animasi Masuk (BounceIn) --- */
+    opacity: 0;
+    animation: bounceIn 1s ease-out 0.8s forwards;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60%;
+    margin: 8px auto 0;
+    height: 3px;
+    background-color: #e67e22;
+    border-radius: 5px;
+}
+
+/* Hover Judul Section */
+section h2:hover {
+    color: #d35400;
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* ======================== */
+/*    MENU GRID & CARD      */
+/*     (Horizontal Scroll) */
+/* ======================== */
+.menu-container {
+    display: flex;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 25px;
+    justify-content: flex-start;
+    padding: 0 20px 20px 20px;
+    scroll-behavior: smooth;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 15px;
+
+    min-width: 280px;
+    width: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
+
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s ease;
+
+    /* --- Animasi Entrance (FadeInUp) --- */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Menambahkan delay pada setiap item (efek staggered) */
+.menu-container .menu-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.menu-container .menu-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.menu-container .menu-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.menu-container .menu-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.menu-container .menu-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.menu-container .menu-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.menu-container .menu-item:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.menu-container .menu-item:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+
+/* Hover Card */
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Keterbacaan Teks Menu */
+.menu-text {
+    padding: 10px 5px 5px 5px;
+}
+
+.menu-text h3 {
+    color: #d35400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.menu-text p {
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ======================== */
+/*        GAMBAR            */
+/* ======================== */
+.menu-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.4s ease;
+}
+
+.menu-item:hover .menu-img {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+/* ======================== */
+/*    BUTTON RESEP          */
+/* ======================== */
+.btn-resep {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-resep:hover {
+    background-color: #ca6f1e;
+    transform: translateY(-3px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ======================== */
+/*     FORM KRITIK          */
+/* ======================== */
+form textarea {
+    width: 90%;
+    max-width: 500px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+form textarea:focus {
+    border-color: #e67e22;
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.5);
+}
+
+/* Tombol Form */
+form button {
+    margin-top: 12px;
+    padding: 10px 25px;
+    background: #d35400;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #b54300;
+    transform: scale(1.05);
+    /* --- Animasi Pulse saat hover --- */
+    animation: pulse 0.5s infinite;
+}
+
+/* ======================== */
+/*         MODAL            */
+/* ======================== */
+.modal {
+    /* PENTING: Sembunyikan modal saat pertama kali dimuat */
+    display: none; 
+    
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    /* Gunakan flex untuk centering saat JS memanggilnya */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px; /* Tambah padding */
+    border-radius: 14px;
+    width: 85%;
+    max-width: 600px; /* Lebarkan sedikit */
+    animation: popin 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Penting: untuk positioning .close-btn */
+    max-height: 90vh; /* Batasi tinggi modal */
+    overflow-y: auto; /* Aktifkan scroll jika konten terlalu panjang */
+}
+
+/* Gaya untuk Gambar di dalam Modal */
+.modal-img {
+    width: 100%;
+    max-width: 350px;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+    color: #d35400;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Gaya untuk Teks Resep (di dalam elemen <p id="isiResep">) */
+#isiResep pre {
+    white-space: pre-wrap; /* PENTING: Mencegah teks meluber dan menjaga baris baru */
+    text-align: left; /* Rata kiri untuk langkah-langkah resep */
+    width: 100%;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 10px 0 0 0;
+}
+
+/* Close Button Hover */
+.close-btn {
+    /* Posisikan secara Absolute di dalam modal-content */
+    position: absolute; 
+    top: 10px;
+    right: 15px;
+    
+    font-size: 30px; 
+    cursor: pointer;
+    color: #d35400; /* Warna tombol sesuai tema */
+    transition: 0.3s;
+    z-index: 30; 
+}
+
+.close-btn:hover {
+    color: red;
+    transform: rotate(90deg) scale(1.1);
+}
+
+@keyframes popin {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ======================== */
+/*         FOOTER           */
+/* ======================== */
+footer {
+    background: #d35400;
+    text-align: center;
+    padding: 10px 0;
+    color: white;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+footer:hover {
+    background: #e67e22;
+}
+
+
+/* ======================== */
+/*     DEFINISI ANIMASI (KEYFRAMES dari Animate.css)     */
+/* ======================== */
+
+/* Animasi FadeInUp (untuk item menu) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* Animasi Pulse (untuk judul dan tombol) */
+@keyframes pulse {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+        transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+/* Animasi BounceIn (untuk judul section) */
+@keyframes bounceIn {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+
+/* ======================== */
+/*     MEDIA QUERIES        */
+/* ======================== */
+
+/* --- Tampilan untuk Tablet (Maksimal Lebar 768px) --- */
+@media screen and (max-width: 768px) {
+
+    header {
+        padding: 15px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .menu-item {
+        min-width: 260px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+        margin-top: 10%;
+    }
+}
+
+
+/* --- Tampilan untuk Ponsel (Maksimal Lebar 480px) --- */
+@media screen and (max-width: 480px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    .menu-img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .btn-resep {
+        font-size: 14px;
+    }
+
+    .modal-img {
+        max-width: 200px;
+        aspect-ratio: 1 / 1;
+    }
+}
+

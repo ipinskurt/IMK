@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuliner Nusantara</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Navigasi -->
+  <header>
+    <h1>Kuliner Nusantara</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu Kuliner</a></li>
+        <li><a href="menu_unggulan.html">Resep dan Rating</a></li>
+        <li><a href="tentang_kami.html">Tentang Kami</a></li>
+        <li><a href="#kritik">Kritik & Saran</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home">
+    <h2>Selamat Datang di Kuliner Nusantara</h2>
+    <p>Temukan cita rasa khas dari berbagai daerah Indonesia!</p>
+  </section>
+
+  <!-- Menu Kuliner -->
+  <section id="menu">
+    <h2>Menu Kuliner</h2>
+    <div class="menu-container">
+
+      <div class="menu-item">
+        <img src="images/rendang.jpg" alt="Rendang" class="menu-img">
+        <div class="menu-text">
+          <h3>Rendang</h3>
+          <p><strong>Asal:</strong> Sumatera Barat</p>
+          <p>Daging sapi dimasak lama dengan santan dan rempah khas Minang hingga kering dan kaya rasa.</p>
+          <button class="btn-resep" data-resep="rendang">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/gudeg.jpg" alt="Gudeg" class="menu-img">
+        <div class="menu-text">
+          <h3>Gudeg</h3>
+          <p><strong>Asal:</strong> Yogyakarta</p>
+          <p>Nangka muda dimasak santan dengan gula aren dan daun jati; manis dan gurih.</p>
+          <button class="btn-resep" data-resep="gudeg">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/sate-lilit.jpg" alt="Sate Lilit" class="menu-img">
+        <div class="menu-text">
+          <h3>Sate Lilit</h3>
+          <p><strong>Asal:</strong> Bali</p>
+          <p>Ikan cincang berbumbu dililitkan pada batang serai lalu dibakar hingga harum.</p>
+          <button class="btn-resep" data-resep="sate-lilit">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/soto.jpg" alt="Soto" class="menu-img">
+        <div class="menu-text">
+          <h3>Soto</h3>
+          <p><strong>Asal:</strong> Berbagai daerah</p>
+          <p>Sup berempah dengan daging/ayam, bihun, dan taburan bawang goreng.</p>
+          <button class="btn-resep" data-resep="soto">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/gulai.jpg" alt="Gulai" class="menu-img">
+        <div class="menu-text">
+          <h3>Gulai</h3>
+          <p><strong>Asal:</strong> Sumatera</p>
+          <p>Kuah santan berempah berisi daging, ikan, atau sayur; gurih dan harum.</p>
+          <button class="btn-resep" data-resep="gulai">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/nasi-goreng.jpg" alt="Nasi Goreng" class="menu-img">
+        <div class="menu-text">
+          <h3>Nasi Goreng</h3>
+          <p><strong>Asal:</strong> Nasional</p>
+          <p>Nasi digoreng dengan bumbu bawang dan kecap, disajikan dengan telur dan ayam.</p>
+          <button class="btn-resep" data-resep="nasi-goreng">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/pempek.jpg" alt="Pempek" class="menu-img">
+        <div class="menu-text">
+          <h3>Pempek</h3>
+          <p><strong>Asal:</strong> Palembang</p>
+          <p>Olahan ikan dengan tepung tapioka, disajikan bersama kuah cuko pedas manis.</p>
+          <button class="btn-resep" data-resep="pempek">Lihat Resep</button>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="images/rawon.jpg" alt="Rawon" class="menu-img">
+        <div class="menu-text">
+          <h3>Rawon</h3>
+          <p><strong>Asal:</strong> Jawa Timur</p>
+          <p>Sup daging hitam dari kluwek, disajikan dengan tauge dan nasi hangat.</p>
+          <button class="btn-resep" data-resep="rawon">Lihat Resep</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Kritik & Saran -->
+  <section id="kritik">
+    <h2>Kritik & Saran</h2>
+    <form id="formKritik">
+      <textarea id="txtKritik" placeholder="Tuliskan kritik atau saran Anda..." rows="4"></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Modal Pop-up Resep -->
+  <div id="modalResep" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <img id="modalImgResep" src="" alt="Gambar Resep" class="modal-img">
+      <h3 id="judulResep"></h3>
+      <p id="isiResep"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Kuliner Nusantara</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
